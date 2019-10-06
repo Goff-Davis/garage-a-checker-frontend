@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 		// get readable datetime
 		const timestamp = data.date.stringValue;
-		const date = `${timestamp.slice(5, 7)}-${timestamp.slice(8, 10)}-${timestamp.slice(0, 4)}`;
+		const date = `${timestamp.slice(5, 7)}/${timestamp.slice(8, 10)}/${timestamp.slice(0, 4)}`;
 
 		let hour = parseInt(timestamp.slice(11, 13));
 		let am = true;
@@ -57,7 +57,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			hour -= 4;
 		}
 
-		const time = `${hour}:${timestamp.slice(14, 16)}:${timestamp.slice(17, 19)} ${am ? 'AM':'PM'} Eastern Time`;
+		const time = `${hour}:${timestamp.slice(14, 16)}:${timestamp.slice(17, 19)} ${am ? 'AM':'PM'} EST`;
 
 		const readableDateTime = `${date} at ${time}`;
 
