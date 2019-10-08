@@ -39,6 +39,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 		let hour = parseInt(timestamp.slice(11, 13));
 		let am = true;
 
+		console.log(hour);
+
 		// adjust to eastern time
 		if (hour - 4 < 1) {
 			hour = 24 - (4 - hour);
@@ -47,10 +49,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			hour -= 4;
 		}
 
+		// set am or pm
+		if (hour > 11) {
+			am = false;
+		}
+
 		// adjust to 12 hour clock
 		if (hour > 12) {
 			hour -= 12;
-			am = false;
 		}
 
 		if (hour === 0) {
