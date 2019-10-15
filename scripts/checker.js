@@ -34,40 +34,19 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 		// get readable datetime
 		const timestamp = data.date.stringValue;
-		const date = `${timestamp.slice(5, 7)}/${timestamp.slice(8, 10)}/${timestamp.slice(0, 4)}`;
 
-		let hour = parseInt(timestamp.slice(11, 13));
-		let am = true;
-
-		console.log(hour);
-
-		// adjust to eastern time
-		if (hour - 4 < 1) {
-			hour = 24 - (4 - hour);
+		const dateOptions = {
+			weekday: 'long',
+			year: 'numeric',
+			month: 'numeric',
+			day:'numeric',
+			hour: 'numeric',
+			minute: '2-digit',
+			timeZoneName: 'short'
 		}
-		else {
-			hour -= 4;
-		}
+		const date = new Date(timestamp).toLocaleDateString('en-US', dateOptions);
 
-		// set am or pm
-		if (hour > 11) {
-			am = false;
-		}
-
-		// adjust to 12 hour clock
-		if (hour > 12) {
-			hour -= 12;
-		}
-
-		if (hour === 0) {
-			hour = 12;
-		}
-
-		const time = `${hour}:${timestamp.slice(14, 16)}:${timestamp.slice(17, 19)} ${am ? 'AM':'PM'} EST`;
-
-		const readableDateTime = `${date} at ${time}`;
-
-		document.getElementById('last-updated').innerHTML = readableDateTime;
+		document.getElementById('last-updated').innerHTML = date;
 		document.getElementById('total-spaces').innerHTML = data.max_spaces.integerValue;
 		document.getElementById('percent-full').innerHTML = `${data.percent_full.doubleValue}%`;
 		document.getElementById('spaces-filled').innerHTML = data.spaces_filled.integerValue;
