@@ -43,8 +43,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			hour: 'numeric',
 			minute: '2-digit',
 			timeZoneName: 'short'
-		}
-		const date = new Date(timestamp).toLocaleDateString('en-US', dateOptions);
+		};
+
+		let date = new Date(timestamp).toLocaleDateString('en-US', dateOptions).split(',');
+		date = `${date[0]}, ${date[1]} at ${date[2]}`;
 
 		document.getElementById('last-updated').innerHTML = date;
 		document.getElementById('total-spaces').innerHTML = data.max_spaces.integerValue;
