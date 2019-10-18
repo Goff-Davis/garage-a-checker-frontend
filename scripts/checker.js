@@ -9,7 +9,7 @@ const handleClick = () => {
 	}
 };
 
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', event => {
 	const API_URL = 'https://firestore.googleapis.com/v1/projects/garage-a-info/databases/(default)/documents/latest_info/garage-a';
 
 	const handleSuccess = data => {
