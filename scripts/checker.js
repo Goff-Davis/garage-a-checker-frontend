@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	});
 
 	getData.then(
-		(data) => {
+		data => {
 			if (typeof data !== 'object') {
 				console.error('Incorrect data type recieved');
 				return;
@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			handleSuccess(data.fields);
 		}
 	).catch(
-		(reason) => {
+		reason => {
 			console.error(`Data request failed: ${reason}`);
 			handleFailure();
 		}
