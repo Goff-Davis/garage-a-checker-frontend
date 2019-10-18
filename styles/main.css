@@ -161,13 +161,8 @@ button {
 	font-size: 18px;
 }
 
-button:hover, button:focus {
+button:focus {
 	text-decoration: underline;
-}
-
-button:hover {
-	background-color: inherit;
-	color: black;
 }
 
 ul {
@@ -224,7 +219,7 @@ footer {
 	font-size: 14px;
 }
 
-@media (max-width: 350px) {
+@media screen and (max-width: 350px) {
 	h1 {
 		font-size: 34px;
 	}
@@ -243,5 +238,13 @@ footer {
 
 	#copyright {
 		font-size: 12px;
+	}
+}
+
+@media screen and (hover: hover) {
+	button:hover {
+		background-color: inherit;
+		color: black;
+		text-decoration: underline;
 	}
 }
