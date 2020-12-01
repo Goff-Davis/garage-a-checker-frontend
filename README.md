@@ -1,8 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/11b83c7f-098a-4d76-9c4e-7f15f1a8549f/deploy-status)](https://app.netlify.com/sites/is-garage-a-full/deploys)
-
 # Garage A Checker Front End
-
-https://isgarageafull.com
 
 User interface for the garage A checker website.
 
